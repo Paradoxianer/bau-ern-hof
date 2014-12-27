@@ -5,9 +5,10 @@
 #include <SpaceLayoutItem.h>
 #include <View.h>
 #include <StringView.h>
-#include "Haus.h"
 #include <stdio.h>
 #include <string.h>
+
+
 
 MainWindow::MainWindow(void)
 	:	BWindow(BRect(100,100,500,400),"Bauernhof",B_TITLED_WINDOW, B_ASYNCHRONOUS_CONTROLS)
@@ -36,7 +37,6 @@ MainWindow::MessageReceived(BMessage *msg)
 		}
 		default:
 		{
-		//	printf("%s",commandLine->Text());
 			BWindow::MessageReceived(msg);
 			break;
 		}
@@ -53,15 +53,6 @@ BView	*MainWindow::MakeStatusView()
 	statusView->GroupLayout()->AddView(new BStringView("status_labe12","Status2"));
 	statusView->GroupLayout()->AddView(new BStringView("status2","Zweiter Status"));
 	return statusView;
-/*	BBox *statusView=new BBox();
-	BGroupLayout *statusLayout = new BGroupLayout(B_HORIZONTAL);
-	statusLayout->SetInsets(2,2,2,2);
-	statusLayout->AddView(new BStringView("status_labe1","Status"));
-	statusLayout->AddView(new BStringView("status","Erster Status"));
-	statusLayout->AddItem(BSpaceLayoutItem::CreateHorizontalStrut(5));
-	statusLayout->AddView(new BStringView("status_labe12","Status2"));
-	statusLayout->AddView(new BStringView("status2","Zweiter Status"));
-	return statusLayout;*/	
 }
 
 

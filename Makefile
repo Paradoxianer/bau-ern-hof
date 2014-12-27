@@ -7,37 +7,45 @@ SRCS=	App.cpp \
 		GameView.cpp \
 		SpielElement
 
-RSRCS=
+LIBS= be root translation
 
-LIBS= root be translation
+#	specify the level of optimization that you desire
+#	NONE, SOME, FULL
+# OPTIMIZE= FULL
 
-LIBPATHS=
-
-SYSTEM_INCLUDE_PATHS= 
-
-LOCAL_INCLUDE_PATHS= 
-
-OPTIMIZE=NONE
-#	specify any preprocessor symbols to be defined.  The symbols will not
-#	have their values set automatically; you must supply the value (if any)
-#	to use.  For example, setting DEFINES to "DEBUG=1" will cause the
-#	compiler option "-DDEBUG=1" to be used.  Setting DEFINES to "DEBUG"
-#	would pass "-DDEBUG" on the compiler's command line.
-
-DEFINES= DEBUG
+#	specify any preprocessor symbols to be defined.  The symbols
+#	will be set to a value of 1.  For example specify DEBUG if you want
+#	DEBUG=1 to be set when compiling.
+DEFINES =   DEBUG
 
 #	specify special warning levels
 #	if unspecified default warnings will be used
 #	NONE = supress all warnings
 #	ALL = enable all warnings
-WARNINGS = ALL
+WARNINGS = NONE
 
-# Build with debugging symbols if set to TRUE
-SYMBOLS= TRUE
+#	specify whether image symbols will be created
+#	so that stack crawls in the debugger are meaningful
+#	if TRUE symbols will be created
+SYMBOLS = TRUE
 
-COMPILER_FLAGS=
+#	specify debug settings
+#	if TRUE will allow application to be run from
+#	a source-level debugger
+DEBUGGER = TRUE
 
-LINKER_FLAGS=
+#	specify additional compiler flags for all files
+COMPILER_FLAGS =
+
+#	specify additional linker flags
+LINKER_FLAGS =
+
+SVG_ICON = ../../Data/Icons/Logogross.svg
+
+#EXTRA_DEPS = copy
+
+
+APP_MENU	= Software
 
 ## include the makefile-engine
 include $(BUILDHOME)/etc/makefile-engine

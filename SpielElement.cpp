@@ -25,7 +25,7 @@ void SpielElement::Zeige(BView *leinwand)
 {
 	int i = 0;
 	if ((meinBild!=NULL) && (meinBild->IsValid()))
-			leinwand->DrawBitmap(meinBild,*this);
+			leinwand->DrawBitmapAsync(meinBild,*this);
 	SpielElement *element =NULL;
 	for (i=0;(element=(SpielElement *)unterElemente->ItemAt(i));i++)
 	{
@@ -36,7 +36,7 @@ void SpielElement::Zeige(BView *leinwand)
 
 BBitmap *SpielElement::HoleBild()
 {
-	BString path("/Haiku_Daten/dev/Bauernhof/art/");
+	BString path("art");
 	path.Append(*name);
 	BFile file(path.String(),B_READ_ONLY);
 	BTranslatorRoster *roster = BTranslatorRoster::Default();
