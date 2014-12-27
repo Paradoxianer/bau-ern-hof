@@ -6,18 +6,22 @@
 #include <Rect.h>
 #include <View.h>
 
-class SpielElement: public BRect
+class SpielElement: public BRect, public BArchivable
 {
 public:
-	SpielElement (char *neuerName);
-	virtual void	FuegeHinzu(void *neuesElement);
-	virtual void	NimmsWeg(void *altesElement);
-	virtual void	Zeige(BView *leinwand);
-	BBitmap	*meinBild;
+							SpielElement (char *neuerName);
+	static	BArchivable*	Instantiate(BMessage* data);
+	virtual	status_t		Archive(BMessage* data, bool deep = true);
+	virtual void			FuegeHinzu(SpielElement *neuesElement);
+	virtual void			NimmsWeg(SpielElement *altesElement);
+	virtual void			Zeige(BView *leinwand);
+	BBitmap					*meinBild;
 
 protected:
-	BString	*name;
-	BList	*unterElemente;
-	BBitmap *HoleBild();
+	BString		*name;
+	BList		*unterElemente;
+	BList		*aktionen;
+	BList		*sensoren;
+	BBitmap		*HoleBild();
 };
 #endif

@@ -7,4 +7,6 @@
 #define BASE_PATH "Bauernhof"
 #define PREFERENCES_FILE "Bauernhof"
 
+#define APP_SIGNATURE "application/x-vnd.dw-TestBauernhofApp"
+
 #endif

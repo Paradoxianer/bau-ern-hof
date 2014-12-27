@@ -4,13 +4,13 @@
 #include <Directory.h>
 #include <FindDirectory.h>
 
-#include "App.h"
+#include "BauernhofApp.h"
 #include "MainWindow.h"
 #include "constants.h"
 
 
-App::App(void)
-	:	BApplication("application/x-vnd.dw-TestApp")
+BauernhofApp::BauernhofApp(void)
+	:	BApplication(APP_SIGNATURE)
 {
 	artPathAvailable = false;
 	StartupCheck();
@@ -19,7 +19,7 @@ App::App(void)
 
 }
 
-status_t App::StartupCheck(void)
+status_t BauernhofApp::StartupCheck(void)
 {
 	BEntry		entry;
 	BPath		path;
@@ -66,7 +66,7 @@ status_t App::StartupCheck(void)
 
 int
 main(void) {
-	App *app = new App();
+	BauernhofApp *app = new BauernhofApp();
 	app->Run();
 	delete app;
 	return 0;

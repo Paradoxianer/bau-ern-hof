@@ -2,7 +2,7 @@ NAME= Bauernhof
 
 TYPE= APP
 
-SRCS=	App.cpp \
+SRCS=	BauernhofApp.cpp \
 		MainWindow.cpp \
 		GameView.cpp \
 		SpielElement

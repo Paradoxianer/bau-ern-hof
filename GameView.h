@@ -17,6 +17,7 @@ public:
 	void KeyDown(const char* bytes, int32 numBytes);
 	int Step(){return 5;};
 protected:
+	
 	BList			*gameBackground;
 	SpielElement	*player;
 	BList			*gameForeground;
